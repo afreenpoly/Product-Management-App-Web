@@ -11,13 +11,7 @@ public class ProductService{
     @Autowired
     ProductDB db;
 
-    // //method to add products,which adds product to array
-    // public void addProduct(Product p) {
-    //     // prodlist.add(p);
-    //     db.save(p);
-    // }
-
-
+    
     public List<Product> getAllProducts() {
         // return prodlist;
         return db.findAll();
@@ -28,5 +22,19 @@ public class ProductService{
         return db.findById(id).get();
     }
 
+    public Product getProductByName(String name) {
+        //convert name to first letter capital and rest small
+        name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+        return db.findByName(name); 
+
+        //by default some methods are there in jparepository like findbyid,findall
+        //we can also create our own methods like findbyname
+    }
+
+    //method to add product
+    public void addProduct(Product p) {
+        // prodlist.add(p);
+        db.save(p);
+    }
 
 }

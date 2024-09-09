@@ -8,16 +8,27 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
+
+//@Data can be used instead of creating the getters and setters
+//Line 49 to 68 can be replaced by @Data
+
 @Entity
+//entity is used to tell that this is a table
+
+//table is used to tell the name of the table
 @Table(name = "products")
 public class Product {
 
     @Id
+    //id is used to tell that this is the primary key
+    //generated value is used to tell that this is auto generated
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String name;
     private String type;
 
+    //column is used to tell the name of the column
     @Column(name = "color")
     private String colour;
     
