@@ -1,6 +1,6 @@
 # Product Management App Web
 
-Welcome to the Product Management App Web repository! This repository contains the web application for managing products.
+This project is a Spring Boot web application for managing products. It provides RESTful endpoints for retrieving all products, fetching a product by ID or name, and adding new products. The app uses Spring Data JPA for database interaction and entity mapping.
 
 ## Installation
 
